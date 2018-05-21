@@ -1,0 +1,17 @@
+stages:
+        - build
+        - test
+        - deploy
+
+build:
+        stage: build
+        script:
+                - echo "Building Calculator"
+                - cd $GOPATH/src/github.com/user/hello
+                - go install
+                - cd $GOPATH
+test:
+        stage: test
+        script:
+                - echo "Testing Calculator"
+                - go test github.com/user/hello
